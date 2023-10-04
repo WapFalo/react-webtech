@@ -1,14 +1,39 @@
 // import { useState } from 'react'
-import '../styles/App.css'
 import '../styles/normalize.css'
 import '../styles/style.css'
 import data from '../data/data.json'
+import logo from '../assets/logo.png'
+
+function getColorHexa(type) {
+  let color;
+    switch(type) {
+      case 'Eau':
+        color = 'blue';
+        break;
+
+      case 'Plante':
+        color = 'green';
+        break;
+
+      case 'Feu':
+        color = 'orange';
+        break;
+
+      default:
+        color = 'grey';
+        break;  
+  }
+  return color
+}
 
 function App() {
   const pokemonList =
     <main>
       {data.map((pokemon) => (
-        <article key={pokemon.pokedexId}>
+        <article key={pokemon.pokedexId}  style={{
+          borderColor: getColorHexa(pokemon.apiTypes[0].name),
+          backgroundColor: getColorHexa(pokemon.apiTypes[0].name),
+        }}>
           <figure>
           <picture>
               <img src={pokemon.image} alt="Image ${pokemon.name}" />
@@ -30,6 +55,9 @@ function App() {
 
   return (
     <>
+      <h1>
+        <img src={logo} alt='Logo Pokémon' width="100%" height="100%"/>
+      </h1>
       {pokemonList}
     </>
   )
