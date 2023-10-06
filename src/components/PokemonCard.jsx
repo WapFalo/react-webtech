@@ -1,4 +1,5 @@
-function getColorHexa(type) {
+function PokemonCard({pokemon}) {
+  function getColorHexa(type) {
     let color;
       switch(type) {
         case 'Eau':
@@ -19,8 +20,7 @@ function getColorHexa(type) {
     }
     return color
   }
-
-function PokemonCard({pokemon}) {
+  
     const pokemonCard =
     
       <article key={pokemon.pokedexId}  style={{
