@@ -22,7 +22,6 @@ function CardPokemon(props) {
         <span className="addToPokedex"
           onClick={(e) => {
               e.stopPropagation()
-              console.log("test")
               props.setPokedex(props.pokedex.concat({
                 id: poke.pokedexId,
                 name: poke.name

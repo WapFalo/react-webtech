@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import '../styles/normalize.css'
 import '../styles/style.css'
 import logo from '../assets/logo.png'
@@ -11,6 +11,9 @@ function App() {
   const helloList = data.map((poke, index) => (
     <CardPokemon data={poke} key={index} pokedex={pokedex} setPokedex={setPokedex}/>
   ));
+  useEffect(() => {
+    console.log(`Le Pokedex possède ${pokedex.length} pokémons`)
+  })
 
   return (
     <>
