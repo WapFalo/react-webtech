@@ -8,6 +8,7 @@
     background-color: #ef4036;
     padding: 32px;
     display: flex;
+    margin: auto;
     flex-direction: column;
     justify-content: flex-start;
     width: 300px;
@@ -57,6 +58,7 @@
     position: absolute;
     z-index: 99;
     border-radius: 0 5px 5px 0;
+    margin: auto;
   }
   
   .lmj-cart-closed > button {
