@@ -6,6 +6,9 @@ import data from '../data/data.json'
 import Spinner from './Spinner/Spinner'
 import CardPokemon from './CardPokemon/CardPokemon.jsx'
 import Sidebar from './Sidebar/Sidebar'
+import { Link } from 'react-router-dom'
+import Navigation from './Navigation/Navigation'
+import Footer from './Footer/Footer'
 
 function App() {
   const [pokedex, setPokedex] = useState([])
@@ -34,8 +37,12 @@ function App() {
   return (
     <>
       <h1>
-        <img src={logo} alt="logo" width="100%" height="100%"/>
+        <Link to={'/'}><img src={logo} alt="logo" width="100%" height="100%"/></Link>
       </h1>
+      {/* <Navigation />
+      <div id='detail'>
+        <Outlet />
+      </div> */}
       <div className="lmj-layout-inner">
         <Sidebar pokedex={pokedex}/>
         <main>
@@ -43,7 +50,9 @@ function App() {
             [helloList]
           ) : (
             <Spinner />
-          )}</main>
+          )}
+          <Footer />
+          </main>
       </div>
     </>
   );

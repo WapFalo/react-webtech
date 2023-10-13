@@ -1,9 +1,11 @@
 import './CardPokemon.scss';
 import iconAdd from '../../assets/plus.svg'
 import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 function CardPokemon(props) {
   let poke = props.data;
+  let params = useParams();
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -47,7 +49,7 @@ function CardPokemon(props) {
           </figcaption>
         </figure>
         <div className="cardBack">
-          <a href="#">Voir plus</a>
+          <Link to={'/details'}>Voir plus</Link>
         </div>
       </div>
     </article>
