@@ -3,6 +3,7 @@ import '../styles/normalize.css'
 import '../styles/style.css'
 import logo from '../assets/logo.png'
 import data from '../data/data.json'
+import Spinner from './Spinner/Spinner'
 import CardPokemon from './CardPokemon/CardPokemon.jsx'
 import Sidebar from './Sidebar/Sidebar'
 
@@ -41,7 +42,7 @@ function App() {
           { loading ? (
             [helloList]
           ) : (
-            <p>Chargement</p>
+            <Spinner />
           )}</main>
       </div>
     </>
